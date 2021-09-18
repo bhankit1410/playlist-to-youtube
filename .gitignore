@@ -1,4 +1,4 @@
 .idea
 venv
 *.pyc
-src/resources/secret/*.json
+src/main/google/secrets/*
