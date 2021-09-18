@@ -1,4 +1,5 @@
 .idea
 venv
 *.pyc
-src/main/google/secrets/*
+# Ignoring gitignore for secret
+# src/main/google/secrets/*

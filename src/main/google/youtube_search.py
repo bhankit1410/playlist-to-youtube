@@ -9,6 +9,7 @@ import os
 import google_auth_oauthlib.flow
 import googleapiclient.discovery
 import googleapiclient.errors
+import src.main.playlist_to_youtube as pty
 
 scopes = ["https://www.googleapis.com/auth/youtube.readonly"]
 
@@ -29,12 +30,15 @@ def main():
     youtube = googleapiclient.discovery.build(
         api_service_name, api_version, credentials=credentials)
 
-    request = youtube.search().list(
-        part="snippet",
-        maxResults=1,
-        q="Perfect Ed Shreen "
-    )
-    response = request.execute()
+    list_of_songs = pty.main()
+
+    for song in list_of_songs:
+        request = youtube.search().list(
+            part="snippet",
+            maxResults=1,
+            q=song
+        )
+        response = request.execute()
 
     print(response)
 
