@@ -19,7 +19,7 @@ class PlaylistToYoutube(Resource):
 
 
 def main():
-    path = '/Users/a0b0hst/PycharmProjects/playlist-to-youtube-local/src/resources/hit_rewind.json'
+    path = 'hit_rewind.json'
     f = open(path, )
     spotify_playlist = json.load(f)
     playlist_name, list_of_songs = parse_spotify_playlist(spotify_playlist)
